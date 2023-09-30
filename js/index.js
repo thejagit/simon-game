@@ -57,7 +57,7 @@ function gameOver() {
 
 // adding music sounds
 function playMusic(name) {
-    var audioMusic = new Audio("../sounds/" + name + ".mp3");
+    var audioMusic = new Audio("https://thejagit.github.io/simon-game/sounds/" + name + ".mp3");
     audioMusic.play();
 }
 function musicWrong() {
