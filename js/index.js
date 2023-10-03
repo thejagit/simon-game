@@ -5,11 +5,17 @@ $(document).ready(function () {
     // press any key to start the game
     $(document).keypress(function (e) {
         if (!started) {
+            
+            let randomId = randomNumber();
+            let randomname = buttonColors[randomId];
+            $("#"+randomname).fadeIn(100).fadeOut(100).fadeIn(100);
+              
             gameLevel++;
             started = true;
 
             emptyHeading();
             changeLevel(gameLevel);
+            playMusic(randomname);
         }
     });
 
@@ -34,7 +40,7 @@ function changeLevel(gameLevel) {
 function playGame(btnId) {
     let userSelectedId = buttonColors.indexOf(btnId);
     let randomId = randomNumber();
-    $("#"+btnId).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    $("#"+btnId).fadeIn(100).fadeOut(100).fadeIn(100);
     // alert("hi "+userSelectedId+"\n Random Number -"+randomId);
     if (userSelectedId === randomId) {
         // alert("hi I'm ramdom num "+randomId);
